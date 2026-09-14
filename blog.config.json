@@ -1,0 +1,37 @@
+{
+  "brand": "Gaming",
+  "domain": "gamerzeta.com",
+  "niche": "Gaming PC news, guides, reviews, and setup advice",
+  "language": "en",
+  "categories": [
+    "Guides",
+    "News",
+    "Reviews",
+    "Setup"
+  ],
+  "theme": {
+    "preset": "command-hud"
+  },
+  "authors": [
+    {
+      "name": "Kmatchou",
+      "bio": "Gaming PC enthusiast covering practical guides, hardware picks, setup ideas, and the games worth your time."
+    }
+  ],
+  "seeds": [
+    "Niverness Ti Everness (NTE) - CPP - Windows only - Steam",
+    "Star Trek Fleet Command",
+    "Raid: Shadow Legends"
+  ],
+  "modules": [
+    "gaming"
+  ],
+  "content": {
+    "articlesPerCategory": 3
+  },
+  "monetization": {
+    "ads": true,
+    "affiliate": true,
+    "cpi": true
+  }
+}
