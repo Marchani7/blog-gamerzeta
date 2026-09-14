@@ -122,29 +122,61 @@ footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 70p
 
 /* Single header advertisement creative */
 .ad-leaderboard {
-  padding: 0;
+  background: transparent;
+  border: 0;
   min-height: 146px;
-  overflow: hidden;
+  overflow: visible;
+  padding: 0;
 }
 .ad-creative {
   display: block;
-  width: min(728px, 100%);
   line-height: 0;
+  overflow: hidden;
+  position: relative;
+  width: min(728px, 100%);
 }
 .ad-creative img {
-  display: block;
-  width: 100%;
-  height: auto;
   aspect-ratio: 5 / 1;
+  display: block;
+  height: auto;
   object-fit: cover;
   object-position: center;
+  width: 100%;
+}
+.ad-copy {
+  background: rgba(8, 11, 20, .88);
+  bottom: 18px;
+  color: var(--text);
+  left: 18px;
+  line-height: 1;
+  padding: 8px 10px;
+  position: absolute;
+}
+.ad-cta {
+  background: var(--mint);
+  bottom: 18px;
+  color: #061311;
+  font: 800 .68rem/1 var(--mono);
+  padding: 9px 11px;
+  position: absolute;
+  right: 18px;
+  text-transform: uppercase;
 }
 @media (max-width: 760px) {
   .ad-leaderboard {
     min-height: 0;
     margin: 20px 0 32px;
   }
-  .ad-creative img {
-    aspect-ratio: 5 / 1;
+  .ad-copy {
+    bottom: 10px;
+    font-size: .5rem;
+    left: 10px;
+    padding: 6px 7px;
+  }
+  .ad-cta {
+    bottom: 10px;
+    font-size: .52rem;
+    padding: 7px 8px;
+    right: 10px;
   }
 }
