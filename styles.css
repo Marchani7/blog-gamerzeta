@@ -18,8 +18,6 @@
 }
 
 
-
-
 * { box-sizing: border-box; }
 html { background: var(--bg); color: var(--text); font-family: var(--body); }
 body { margin: 0; min-width: 320px; background: radial-gradient(circle at 85% -10%, rgba(92,124,250,.22), transparent 32rem), var(--bg); }
@@ -120,12 +118,4 @@ footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 70p
 .campaign-media { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .campaign-media img, .campaign-media video { width: 100%; height: 100%; min-height: 190px; object-fit: cover; border-radius: 14px; background: #080b14 url('nte-official-promo.png') center/cover no-repeat; }
 .offers-panel { margin: 0 0 58px; }
-/* Image-only advertising slots; existing blog structure preserved. */
-.ad-slot{padding:0;overflow:hidden;position:relative;background:#0b0c0e}
-.ad-slot img{display:block;width:100%;height:100%;object-fit:cover}
-.ad-band .ad-leaderboard{aspect-ratio:1920/600;min-height:0}
-.article-page .ad-band .ad-leaderboard{aspect-ratio:970/250}
-.ad-rectangle{aspect-ratio:300/250;height:auto;min-height:0}
-.ad-inline{aspect-ratio:336/280;min-height:0}
-.ad-anchor img{display:block;width:min(100%,970px);height:90px;object-fit:cover}
-@media(max-width:700px){.ad-band .ad-leaderboard,.article-page .ad-band .ad-leaderboard{aspect-ratio:320/100}.ad-rectangle{aspect-ratio:300/250}.ad-inline{aspect-ratio:336/280}.ad-anchor img{height:70px}}
+.offer-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
