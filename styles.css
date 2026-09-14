@@ -180,3 +180,5 @@ footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 70p
     right: 10px;
   }
 }
+
+@media (max-width: 760px){.article-hero-ad{float:none!important;margin:24px auto!important;}}
