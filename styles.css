@@ -196,3 +196,8 @@ footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 70p
 .content-rail-layout .game-rail{grid-column:1}
 .content-rail-layout .campaign-panel{grid-column:1;width:auto}
 .content-rail-layout .sidebar-ads{grid-column:2;grid-row:1 / span 2}
+
+
+/* Compact article artwork */
+.article-cover{min-height:220px;margin-top:-16px}
+@media (max-width:760px){.article-cover{min-height:170px;margin-top:0}}
