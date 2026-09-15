@@ -213,13 +213,21 @@ footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 70p
 
 /* Guides/category layout: keep the editorial hero readable and prevent mobile overflow. */
 body[data-page="category"]{overflow-x:hidden}
+body[data-page="category"] main.wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;column-gap:28px;align-items:start}
 body[data-page="category"] .hero{align-items:stretch;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+body[data-page="category"] .hero{grid-column:1/-1}
 body[data-page="category"] .hero-art{min-height:320px}
+body[data-page="category"] .ad-rail{align-items:flex-end;display:flex;flex-direction:column;gap:18px;grid-column:2;grid-row:2 / span 2;margin:0}
+body[data-page="category"] .section-head{grid-column:1;grid-row:2}
+body[data-page="category"] .cards{grid-column:1;grid-row:3}
 body[data-page="category"] .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
-body[data-page="category"] .ad-rail{margin-bottom:48px}
 @media (max-width:900px){
+  body[data-page="category"] main.wrap{display:flex;flex-direction:column}
   body[data-page="category"] .hero{grid-template-columns:1fr;padding-top:48px}
   body[data-page="category"] .hero-art{min-height:240px}
+  body[data-page="category"] .section-head{order:2}
+  body[data-page="category"] .cards{order:3}
+  body[data-page="category"] .ad-rail{align-items:center;flex-wrap:nowrap;order:4}
   body[data-page="category"] .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:640px){
