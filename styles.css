@@ -188,7 +188,7 @@ footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 70p
 .content-rail-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
 .sidebar-ads{display:flex;flex-direction:column;align-items:flex-end;gap:18px}
 .sidebar-ads .ad-rectangle{width:300px;height:250px}
-.sidebar-ads .ad-sky{width:160px;height:600px}
+.sidebar-ads .ad-sky{width:120px;height:600px}
 @media (max-width:900px){.content-rail-layout{grid-template-columns:1fr}.sidebar-ads{align-items:center}}
 
 
