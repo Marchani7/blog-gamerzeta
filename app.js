@@ -46,8 +46,9 @@ if (!document.querySelector('.ad-rail') && document.body.dataset.page !== 'artic
 if (document.body.dataset.page === 'article') { const articleTitle=document.querySelector('[data-title]'); if(articleTitle) articleTitle.style.fontSize='clamp(2rem,3.8vw,3.2rem)'; }
 
 // Replace empty ad placeholders with the approved homepage creative asset.
-const rectangleMarkup = document.body.dataset.page === 'home' ? homepageRectangle : creativeRectangle;
-const skyMarkup = document.body.dataset.page === 'home' ? homepageSky : creativeSky;
+const useHomepageCreative = ['home','article','category'].includes(document.body.dataset.page);
+const rectangleMarkup = useHomepageCreative ? homepageRectangle : creativeRectangle;
+const skyMarkup = useHomepageCreative ? homepageSky : creativeSky;
 for (const [selector, markup] of [['.ad-rectangle:not(.ad-creative-unit)', rectangleMarkup], ['.ad-sky:not(.ad-creative-unit)', skyMarkup]]) {
   const template = document.createElement('template');
   template.innerHTML = markup;
@@ -57,3 +58,6 @@ for (const [selector, markup] of [['.ad-rectangle:not(.ad-creative-unit)', recta
     ad.innerHTML = content;
   });
 }
+
+// Keep article pages to one coherent banner set; remove the older fixed duplicate.
+if (['article','category'].includes(document.body.dataset.page)) document.querySelector('.ad-anchor')?.remove();
