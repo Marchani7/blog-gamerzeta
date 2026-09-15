@@ -26,6 +26,8 @@ if (document.body.dataset.page === 'article') { const ad300=document.querySelect
 const creativeBanner = '<div class="ad-slot ad-leaderboard" aria-label="Advertisement"><a class="ad-creative" href="article.html?slug=nte-pc-launch-watch" aria-label="Read Gamerzeta NTE PC coverage"><img class="ad-slide ad-slide-a" src="gamerzeta-nte.png" alt="Neverness to Everness gaming artwork" width="728" height="146"><img class="ad-slide ad-slide-b" src="share_en.jpg" alt="" width="728" height="146" aria-hidden="true"><span class="ad-copy mono">NEVERNESS TO EVERNESS / PLAY FREE</span><span class="ad-cta">READ THE NTE GUIDE</span></a></div>';
 const creativeRectangle = '<div class="ad-slot ad-rectangle ad-creative-unit" aria-label="Advertisement"><a href="article.html?slug=nte-pc-launch-watch" aria-label="Read Gamerzeta NTE PC coverage"><img src="gamerzeta-nte.png" alt="Neverness to Everness gaming artwork"><span class="ad-unit-copy mono">NTE / PLAY FREE</span><span class="ad-unit-cta">READ GUIDE</span></a></div>';
 const creativeSky = '<div class="ad-slot ad-sky ad-creative-unit" aria-label="Advertisement"><a href="article.html?slug=nte-pc-launch-watch" aria-label="Read Gamerzeta NTE PC coverage"><img src="gamerzeta-nte.png" alt="Neverness to Everness gaming artwork"><span class="ad-unit-copy mono">NTE / PLAY FREE</span><span class="ad-unit-cta">READ GUIDE</span></a></div>';
+const homepageRectangle = '<div class="ad-slot ad-rectangle ad-creative-unit" aria-label="Advertisement"><a href="article.html?slug=nte-pc-launch-watch" aria-label="Read Gamerzeta NTE PC coverage"><img src="nte-official-promo.png" alt="Neverness to Everness promotional artwork"><span class="ad-unit-copy mono">NTE / OFFICIAL</span><span class="ad-unit-cta">READ GUIDE</span></a></div>';
+const homepageSky = '<div class="ad-slot ad-sky ad-creative-unit" aria-label="Advertisement"><a href="article.html?slug=nte-pc-launch-watch" aria-label="Read Gamerzeta NTE PC coverage"><img src="share_en.jpg" alt="Neverness to Everness city artwork"><span class="ad-unit-copy mono">NTE / PLAY FREE</span><span class="ad-unit-cta">READ GUIDE</span></a></div>';
 if (document.body.dataset.page === 'article') { const main=document.querySelector('.article-page'); main.insertAdjacentHTML('afterbegin','<div class="ad-band">'+creativeBanner+'</div>'); const anchor=document.createElement('div'); anchor.className='ad-anchor'; anchor.innerHTML='<span class="mono">ADVERTISEMENT · 728 × 90</span><button type="button" aria-label="Close ad">×</button>'; anchor.querySelector('button').onclick=()=>anchor.remove(); main.appendChild(anchor); window.addEventListener('scroll',()=>{if(window.scrollY>300) anchor.classList.add('is-visible')},{passive:true}); }
 
 // Keep the standard banner placement consistent across all secondary pages.
@@ -35,7 +37,7 @@ if (!document.querySelector('.ad-band') && document.body.dataset.page !== 'home'
 }
 
 // Give every non-article page the same separated rectangle + skyscraper rail.
-if (!document.querySelector('.ad-rail') && document.body.dataset.page !== 'article') {
+if (!document.querySelector('.ad-rail') && document.body.dataset.page !== 'article' && document.body.dataset.page !== 'home') {
   const main = document.querySelector('main');
   const anchor = main && (main.querySelector('.hero') || main.firstElementChild);
   if (anchor) anchor.insertAdjacentHTML('afterend','<div class="ad-rail" aria-label="Advertisement"><div class="ad-slot ad-rectangle" aria-label="Advertisement"><span class="mono">ADVERTISEMENT</span><strong>300 × 250</strong></div><div class="ad-slot ad-sky" aria-label="Advertisement"><span class="mono">ADVERTISEMENT</span><strong>120 × 600</strong></div></div>');
@@ -44,7 +46,9 @@ if (!document.querySelector('.ad-rail') && document.body.dataset.page !== 'artic
 if (document.body.dataset.page === 'article') { const articleTitle=document.querySelector('[data-title]'); if(articleTitle) articleTitle.style.fontSize='clamp(2rem,3.8vw,3.2rem)'; }
 
 // Replace empty ad placeholders with the approved homepage creative asset.
-for (const [selector, markup] of [['.ad-rectangle:not(.ad-creative-unit)', creativeRectangle], ['.ad-sky:not(.ad-creative-unit)', creativeSky]]) {
+const rectangleMarkup = document.body.dataset.page === 'home' ? homepageRectangle : creativeRectangle;
+const skyMarkup = document.body.dataset.page === 'home' ? homepageSky : creativeSky;
+for (const [selector, markup] of [['.ad-rectangle:not(.ad-creative-unit)', rectangleMarkup], ['.ad-sky:not(.ad-creative-unit)', skyMarkup]]) {
   const template = document.createElement('template');
   template.innerHTML = markup;
   const content = template.content.firstElementChild.innerHTML;
