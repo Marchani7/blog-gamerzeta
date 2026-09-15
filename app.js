@@ -59,5 +59,15 @@ for (const [selector, markup] of [['.ad-rectangle:not(.ad-creative-unit)', recta
   });
 }
 
-// Keep article pages to one coherent banner set; remove the older fixed duplicate.
-if (['article','category'].includes(document.body.dataset.page)) document.querySelector('.ad-anchor')?.remove();
+// Restore the existing single bottom banner on article and guide pages.
+if (['article','category'].includes(document.body.dataset.page) && !document.querySelector('.ad-anchor')) {
+  const main = document.querySelector('main');
+  if (main) {
+    const anchor = document.createElement('div');
+    anchor.className = 'ad-anchor';
+    anchor.innerHTML = '<span class="mono">ADVERTISEMENT · 728 × 90</span><button type="button" aria-label="Close ad">×</button>';
+    anchor.querySelector('button').onclick = () => anchor.remove();
+    main.appendChild(anchor);
+    window.addEventListener('scroll', () => { if (window.scrollY > 300) anchor.classList.add('is-visible'); }, {passive:true});
+  }
+}
