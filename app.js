@@ -31,4 +31,11 @@ if (!document.querySelector('.ad-band') && document.body.dataset.page !== 'home'
   if (main) main.insertAdjacentHTML('afterbegin','<div class="ad-band"><div class="ad-slot ad-leaderboard" aria-label="Advertisement"><span class="mono">ADVERTISEMENT</span><strong>728 × 90</strong></div></div>');
 }
 
+// Give every non-article page the same separated rectangle + skyscraper rail.
+if (!document.querySelector('.ad-rail') && document.body.dataset.page !== 'article') {
+  const main = document.querySelector('main');
+  const anchor = main && (main.querySelector('.hero') || main.firstElementChild);
+  if (anchor) anchor.insertAdjacentHTML('afterend','<div class="ad-rail" aria-label="Advertisement"><div class="ad-slot ad-rectangle" aria-label="Advertisement"><span class="mono">ADVERTISEMENT</span><strong>300 × 250</strong></div><div class="ad-slot ad-sky" aria-label="Advertisement"><span class="mono">ADVERTISEMENT</span><strong>120 × 600</strong></div></div>');
+}
+
 if (document.body.dataset.page === 'article') { const articleTitle=document.querySelector('[data-title]'); if(articleTitle) articleTitle.style.fontSize='clamp(2rem,3.8vw,3.2rem)'; }

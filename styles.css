@@ -189,6 +189,7 @@ footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 70p
 .sidebar-ads{display:flex;flex-direction:column;align-items:flex-end;gap:18px}
 .sidebar-ads .ad-rectangle{width:300px;height:250px}
 .sidebar-ads .ad-sky{width:120px;height:600px}
+.ad-rail{display:flex;align-items:flex-start;justify-content:flex-end;gap:18px;margin:0 0 36px}.ad-rail .ad-rectangle{width:300px;height:250px;margin:0}.ad-rail .ad-sky{width:120px;height:600px;margin:0;flex-direction:column}@media(max-width:760px){.ad-rail{justify-content:center;flex-wrap:wrap}.ad-rail .ad-sky{width:120px;height:600px}}
 @media (max-width:900px){.content-rail-layout{grid-template-columns:1fr}.sidebar-ads{align-items:center}}
 
 
