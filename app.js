@@ -212,3 +212,20 @@ if (document.body.dataset.page === 'home') {
     featureGrid.before(setupCards);
   }
 }
+// Make the archive visible across the whole site and power its search/filter controls.
+document.querySelectorAll('nav').forEach(nav => { if (!nav.querySelector('a[href="archive.html"]')) nav.insertAdjacentHTML('beforeend','<a href="archive.html">Archive</a>'); });
+document.querySelectorAll('.section-head').forEach(head => { if (head.textContent.includes('All coverage')) { const marker=head.querySelector('span'); if(marker) marker.outerHTML='<a class="mono" href="archive.html">All coverage →</a>'; } });
+if (document.body.dataset.page === 'archive') {
+  const grid=document.querySelector('[data-archive-grid]'), search=document.querySelector('[data-archive-search]'), count=document.querySelector('[data-archive-count]'), empty=document.querySelector('[data-archive-empty]');
+  let activeFilter='All';
+  const renderArchive=()=>{ const term=(search.value||'').trim().toLowerCase(); const matches=articles.filter(a=>(activeFilter==='All'||a[1]===activeFilter)&&(!term||a.slice(1).join(' ').toLowerCase().includes(term))); grid.innerHTML=matches.map(card).join(''); count.textContent=`${matches.length} article${matches.length===1?'':'s'}`; empty.hidden=matches.length>0; };
+  document.querySelectorAll('[data-archive-filter]').forEach(button=>button.addEventListener('click',()=>{activeFilter=button.dataset.archiveFilter;document.querySelectorAll('[data-archive-filter]').forEach(item=>item.classList.toggle('is-active',item===button));renderArchive();}));
+  search.addEventListener('input',renderArchive); renderArchive();
+}
+// Use the supplied Image 2026 NTE creative in the featured campaign panel.
+if (document.body.dataset.page === 'home') {
+  const campaignMedia = document.querySelector('.campaign-media');
+  if (campaignMedia && !campaignMedia.querySelector('video')) {
+    campaignMedia.innerHTML = '<video class="campaign-video" controls muted loop playsinline preload="metadata" poster="creative/nte-poster.jfif"><source src="creative/nte-campaign.mp4" type="video/mp4"><img src="creative/nte-poster.jfif" alt="Neverness to Everness campaign artwork"></video><span class="mono campaign-caption">NTE / IMAGE 2026 CREATIVE</span>';
+  }
+}
