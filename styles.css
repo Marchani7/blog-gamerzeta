@@ -248,7 +248,7 @@ body[data-page="category"] .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
    increasing its height or affecting article/category pages. */
 body[data-page="home"] .hero{grid-template-columns:minmax(280px,1fr) minmax(520px,1.8fr)}
 body[data-page="home"] .hero-art{min-height:290px}
-body[data-page="home"] .hero-art{background-image:url('gamerzeta-hero.png');}
+body[data-page="home"] .hero-art{background-image:url('gamerzeta-hero.png');background-position:72% center;background-size:cover;}
 @media (max-width:900px){
   body[data-page="home"] .hero{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
 }
