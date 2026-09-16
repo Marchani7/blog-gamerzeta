@@ -1,8 +1,8 @@
 const articles = [
   ['nte-pc-beginner-guide','Guides','NTE',"NTE on PC: A Beginner's Guide to Building a Clean First Session",'A practical starting point for smooth first sessions, sensible settings, and a setup that stays easy to tune.'],
-  ['star-trek-fleet-command-pc-guide','Guides','Star Trek Fleet Command','Star Trek Fleet Command on PC: A Smarter Early-Game Route','Use your first hours well with a simple PC-first approach to missions, upgrades, resources, and a calmer daily loop.'],
-  ['raid-shadow-legends-pc-progression-guide','Guides','Raid: Shadow Legends','Raid: Shadow Legends on PC: A No-Waste Progression Guide','Build a reliable early roster, avoid scattered upgrades, and use the PC client to make the daily grind easier.'],
-  ['nte-pc-launch-watch','News','NTE','NTE PC Launch Watch: Your Pre-Download Checklist','The practical checklist for PC players tracking platform, storage, performance expectations, and account setup.'],
+  ['star-trek-fleet-command-pc-guide','Guides','Star Trek Fleet Command','Star Trek Fleet Command Beginner Guide: What to Upgrade First','A practical early-game route for your station, ships, officers, research, and daily resources on PC.'],
+  ['raid-shadow-legends-pc-progression-guide','Guides','Raid: Shadow Legends','Raid: Shadow Legends Beginner Guide: A No-Waste PC Route','Build one reliable early team, protect scarce resources, and use the PC version to simplify progression.'],
+  ['nte-pc-launch-watch','Guides','Neverness to Everness','NTE PC Requirements and Best Settings: What Your PC Needs','Official NTE PC requirements, storage advice, and a practical settings order for smoother performance.'],
   ['star-trek-fleet-command-pc-update','News','Star Trek Fleet Command','Star Trek Fleet Command on PC: The Update Notes Worth Your Time','A player-first way to read new updates without losing the changes that affect daily PC play.'],
   ['raid-shadow-legends-pc-roundup','News','Raid: Shadow Legends','Raid: Shadow Legends PC Roundup: Events, Value, and What to Skip','A clear way to sort weekly activity on PC: what fits your roster and what can wait.'],
   ['nte-pc-first-impressions','Reviews','NTE','NTE on PC Review: A Promising First Look With Work to Do','An early PC verdict focused on presentation, controls, performance, and whether the first session earns a return visit.'],
@@ -71,4 +71,81 @@ if (['article','category'].includes(document.body.dataset.page) && !document.que
     main.appendChild(anchor);
     window.addEventListener('scroll', () => { if (window.scrollY > 300) anchor.classList.add('is-visible'); }, {passive:true});
   }
+}
+
+// Expanded cornerstone guides. Affiliate CTAs will be added only after the
+// approved tracking URLs are supplied.
+const cornerstoneGuides = {
+  'nte-pc-launch-watch': {
+    title: 'NTE PC Requirements and Best Settings: What Your PC Needs',
+    game: 'Neverness to Everness',
+    dek: 'Official NTE PC requirements, storage advice, and a practical settings order for smoother performance.',
+    body: `<p class="quick-answer"><strong>Quick answer:</strong> NTE officially lists a Core i7-10700 with a GTX 1660 or RX 5600 as its minimum PC level. The recommended target is a Core i7-12700 with an RTX 3060 or RX 6700. You also need Windows 10 64-bit or newer and at least 60 GB of free storage.</p>
+      <h2>NTE official PC requirements</h2>
+      <p>Neverness to Everness is visually ambitious, so the useful question is not simply whether your PC can open it. You need enough graphics performance, storage headroom, and frame-rate stability for exploration and combat to feel consistent.</p>
+      <div class="spec-table" role="region" aria-label="NTE PC requirements" tabindex="0"><table><thead><tr><th>Target</th><th>CPU</th><th>GPU</th></tr></thead><tbody><tr><td>Minimum</td><td>Intel Core i7-10700 or equivalent</td><td>GTX 1660 / RX 5600 or equivalent</td></tr><tr><td>Recommended</td><td>Intel Core i7-12700 or equivalent</td><td>RTX 3060 / RX 6700 or equivalent</td></tr></tbody></table></div>
+      <p>The official FAQ requires Windows 10 64-bit or newer. It asks for 60 GB of free storage and warns that installation or extraction may temporarily need another 60 GB. Leave comfortable headroom instead of filling the drive to its limit.</p>
+      <h2>Best settings order for smoother performance</h2>
+      <p>Begin with the recommended preset, then change one setting at a time. Lower shadows, volumetric effects, reflections, and crowd density before reducing texture quality. Textures mostly depend on available video memory, while shadows and effects can create heavier moment-to-moment load.</p>
+      <p>Use a frame-rate cap your PC can hold consistently. A stable 60 FPS usually feels better than an unlocked rate that repeatedly jumps and drops. If an upscaler is available, begin with its quality mode and compare motion clarity before choosing a more aggressive performance mode.</p>
+      <h2>Storage and driver checklist</h2>
+      <ul><li>Install the game on an SSD.</li><li>Update your graphics driver before the first session.</li><li>Close capture tools and overlays you do not need.</li><li>Keep extra storage available for patches and extraction.</li><li>Let shader compilation finish before judging performance.</li></ul>
+      <h2>What to test before choosing a preset</h2>
+      <p>Test a quiet street, a busy city area, fast travel, and combat. Watch for frame-time spikes, texture loading, input response, and fan noise. Change only one option between tests so you know what actually helped.</p>
+      <h2>Gamerzeta recommendation</h2>
+      <p>A system near the recommended specification is the safer target for a visually rich open-world experience. On lower-end hardware, prioritize stable frame pacing and readable image quality over the highest preset.</p>
+      <p class="source-note">Source: <a href="https://nte.perfectworld.com/jp/article/news/gamebroad/20260427/261937.html" rel="nofollow">Neverness to Everness official launch FAQ</a>, checked September 2026.</p>`
+  },
+  'star-trek-fleet-command-pc-guide': {
+    title: 'Star Trek Fleet Command Beginner Guide: What to Upgrade First',
+    game: 'Star Trek Fleet Command',
+    dek: 'A practical early-game route for your station, ships, officers, research, and daily resources on PC.',
+    body: `<p class="quick-answer"><strong>Quick answer:</strong> Build around one Operations milestone, keep construction and research active, unlock a second ship early, and create separate crews for combat and mining. Focused progress is more valuable than upgrading everything at once.</p>
+      <h2>Upgrade your station with a purpose</h2>
+      <p>Operations controls your overall progression and unlocks more buildings and systems, but rushing it can leave research and support buildings behind. Before increasing Operations, complete the important requirements that strengthen your current ships and economy.</p>
+      <p>Keep construction and research active whenever possible. These two queues create steady account growth even when you only have time for a short session.</p>
+      <h2>Build your second ship early</h2>
+      <p>Scopely’s official Academy explains that the Orion Corvette can be unlocked through the second node of the combat research tree. Its blueprints can also appear from level 7–11 hostile chests. A second ship gives you more flexibility for missions, mining, and combat tasks.</p>
+      <p>Survey ships are designed for mining. Explorers, Interceptors, and Battleships follow a combat triangle: Interceptors pressure Battleships, Battleships pressure Explorers, and Explorers pressure Interceptors.</p>
+      <h2>Officers matter as much as ship power</h2>
+      <p>Place an officer in the captain position to activate the Captain’s Maneuver. Bridge officers use their officer abilities, and compatible groups can add synergy. Build crews around a specific task—hostiles, mining, or survival—instead of choosing only the highest visible power number.</p>
+      <h2>A simple daily route</h2>
+      <ol><li>Collect completed building and research upgrades.</li><li>Start the next useful timer.</li><li>Check daily goals and current events.</li><li>Complete missions that unlock systems or required resources.</li><li>Use the correct ship and crew for mining or hostiles.</li><li>Recall ships and protect the station before leaving.</li></ol>
+      <h2>Common beginner mistakes</h2>
+      <p>Avoid upgrading every ship, spending premium currency to finish short timers, and ignoring research. Bookmark useful systems so you do not repeatedly search the galaxy map. Once station combat becomes available, understand shields and station protection before holding large exposed resources.</p>
+      <h2>Gamerzeta recommendation</h2>
+      <p>Focus on one Operations milestone, one combat ship, one survey ship, and research that supports your current goal. A narrow plan produces faster practical progress than reacting to every notification.</p>
+      <p class="source-note">Sources: Scopely’s official <a href="https://startrekfleetcommand.com/academy/academy-game-overview/" rel="nofollow">Game Overview</a>, <a href="https://startrekfleetcommand.com/academy/academy-ships-combat/" rel="nofollow">Ships &amp; Combat</a>, Officer Guide, and Station Guide, checked September 2026.</p>`
+  },
+  'raid-shadow-legends-pc-progression-guide': {
+    title: 'Raid: Shadow Legends Beginner Guide: A No-Waste PC Route',
+    game: 'Raid: Shadow Legends',
+    dek: 'Build one reliable early team, protect scarce resources, and use the PC version to simplify progression.',
+    body: `<p class="quick-answer"><strong>Quick answer:</strong> Build one dependable campaign-focused champion first, support it with clear team roles, and save books, shards, gems, and silver for a defined progression goal.</p>
+      <h2>Build one dependable core team</h2>
+      <p>Your first objective is a champion who can clear campaign stages reliably and help level the rest of the roster. Support that carry with clear roles: speed control, defense or healing, useful debuffs, and enough damage to finish fights.</p>
+      <p>Do not build several incomplete teams at the same time. A small group with defined roles will progress farther than a large collection of partially upgraded champions.</p>
+      <h2>Make your first level 60 count</h2>
+      <p>Taking one strong campaign-focused champion to level 60 is usually more valuable than stopping several champions at level 40 or 50. Higher rank improves base statistics and opens stronger progression. Commit food champions carefully and lock anything you may need later.</p>
+      <h2>Upgrade artifacts for a reason</h2>
+      <p>Early on, useful main stats and complete sets matter more than chasing perfect rarity. Speed helps champions act sooner, Accuracy helps debuffs land, and defensive statistics keep support champions alive. Stop upgrading an artifact when it no longer supports a clear role.</p>
+      <h2>Protect scarce resources</h2>
+      <p>Save books, shards, gems, and silver for a defined objective. Do not spend simply because an event is visible. Ask whether the reward improves your campaign farmer, core team, or next dungeon milestone.</p>
+      <h2>Use the PC version effectively</h2>
+      <p>Raid is available on PC through Plarium Play, Steam, Epic Games Store, and Microsoft Store. Plarium lists Windows 10 or newer, DirectX 11 or Vulkan-capable graphics, 8 GB RAM, and 5 GB minimum storage, with 8 GB recommended storage.</p>
+      <p>The larger screen is useful for comparing champion skills, reviewing artifacts, and managing longer sessions. On older systems, Plarium recommends Medium or Low graphics and a 30 FPS limit.</p>
+      <h2>Gamerzeta recommendation</h2>
+      <p>Build one campaign carry, surround it with a functional support team, and spend only against the next measurable bottleneck. Progress becomes easier when every resource has a job.</p>
+      <p class="source-note">Sources: Plarium’s official <a href="https://plarium.com/en/game/raid-shadow-legends/" rel="nofollow">Raid game page</a> and <a href="https://raid-support.plarium.com/hc/en-us/articles/360017238859-System-and-Device-Requirements" rel="nofollow">system requirements</a>, checked September 2026.</p>`
+  }
+};
+
+if (document.body.dataset.page === 'article' && cornerstoneGuides[slug]) {
+  const guide = cornerstoneGuides[slug];
+  document.title = `${guide.title} — Gamerzeta`;
+  document.querySelector('[data-category]').textContent = 'GUIDE';
+  document.querySelector('[data-game]').textContent = guide.game;
+  document.querySelector('[data-title]').textContent = guide.title;
+  document.querySelector('[data-dek]').textContent = guide.dek;
+  document.querySelector('[data-body]').innerHTML = guide.body;
 }

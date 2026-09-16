@@ -255,3 +255,15 @@ body[data-page="home"] .hero-art{background-image:url('hero-gaming-setup-v2.png'
 @media (max-width:760px){
   body[data-page="home"] .hero{grid-template-columns:1fr}
 }
+
+/* Editorial guide components */
+.prose .quick-answer{background:linear-gradient(135deg,rgba(51,230,211,.12),rgba(92,124,250,.1));border:1px solid rgba(51,230,211,.45);border-radius:14px;color:var(--text);padding:18px 20px}
+.prose ul,.prose ol{padding-left:1.35rem}
+.prose li{margin:.55rem 0}
+.prose a{color:var(--mint);text-decoration:underline;text-underline-offset:3px}
+.spec-table{border:1px solid var(--line);border-radius:12px;margin:24px 0;overflow-x:auto}
+.spec-table table{border-collapse:collapse;min-width:600px;width:100%}
+.spec-table th,.spec-table td{border-bottom:1px solid var(--line);padding:13px 14px;text-align:left;vertical-align:top}
+.spec-table th{background:var(--panel-2);font:700 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.spec-table tr:last-child td{border-bottom:0}
+.source-note{border-top:1px solid var(--line);color:var(--muted);font-size:.84rem;margin-top:38px;padding-top:18px}
