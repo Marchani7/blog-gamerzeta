@@ -243,3 +243,15 @@ body[data-page="category"] .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
   body[data-page="category"] .ad-rail .ad-sky{height:600px;width:120px}
   body[data-page="category"] .section-head{align-items:flex-start;flex-wrap:wrap;gap:12px}
 }
+
+/* Homepage hero: give the featured artwork more horizontal room without
+   increasing its height or affecting article/category pages. */
+body[data-page="home"] .hero{grid-template-columns:minmax(280px,1fr) minmax(520px,1.8fr)}
+body[data-page="home"] .hero-art{min-height:290px}
+body[data-page="home"] .hero-art{background-image:url('gamerzeta-hero.png');}
+@media (max-width:900px){
+  body[data-page="home"] .hero{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+}
+@media (max-width:760px){
+  body[data-page="home"] .hero{grid-template-columns:1fr}
+}
