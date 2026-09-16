@@ -290,3 +290,13 @@ body[data-page="archive"] main.wrap{display:block}
 .campaign-video{background:#080b14;display:block;height:100%;max-height:360px;object-fit:cover;width:100%}
 .campaign-caption{color:var(--muted);display:block;font-size:.65rem;margin-top:10px}
  .guides-start{grid-column:1;margin:20px 0 24px}.guides-start .section-head{grid-column:auto;grid-row:auto}.guides-note{border-top:1px solid rgba(104,129,190,.35);border-bottom:1px solid rgba(104,129,190,.35);padding:22px 0}.guides-note p{color:#a9b9df;line-height:1.6;margin:0 0 14px;max-width:760px}.guides-note a{color:#46e5dc}
+
+/* In-feed featured promotion: one shared block for homepage and category feeds */
+.feed-promo{grid-column:1 / -1;display:grid;grid-template-columns:minmax(220px,.85fr) minmax(0,1.15fr);min-height:218px;background:var(--panel);border:1px solid var(--mint);overflow:hidden;position:relative}
+.feed-promo-visual{min-height:218px;background:linear-gradient(90deg,rgba(8,11,20,.08),rgba(8,11,20,.72)),url('hero-gaming-setup-v2.png') center/cover}
+.feed-promo-copy{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:26px}
+.feed-promo-copy .mono{color:var(--mint);font-size:.68rem}
+.feed-promo-copy h3{font:800 clamp(1.5rem,3vw,2.35rem)/1 var(--display);letter-spacing:-.045em;margin:0}
+.feed-promo-copy p{color:var(--muted);line-height:1.5;margin:0;max-width:38rem}
+.feed-promo-copy .btn{margin-top:auto}
+@media(max-width:760px){.feed-promo{grid-template-columns:1fr}.feed-promo-visual{min-height:150px}.feed-promo-copy{padding:20px}.feed-promo-copy .btn{margin-top:8px}}
