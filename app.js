@@ -222,10 +222,3 @@ if (document.body.dataset.page === 'archive') {
   document.querySelectorAll('[data-archive-filter]').forEach(button=>button.addEventListener('click',()=>{activeFilter=button.dataset.archiveFilter;document.querySelectorAll('[data-archive-filter]').forEach(item=>item.classList.toggle('is-active',item===button));renderArchive();}));
   search.addEventListener('input',renderArchive); renderArchive();
 }
-// Use the supplied Image 2026 NTE creative in the featured campaign panel.
-if (document.body.dataset.page === 'home') {
-  const campaignMedia = document.querySelector('.campaign-media');
-  if (campaignMedia && !campaignMedia.querySelector('video')) {
-    campaignMedia.innerHTML = '<video class="campaign-video" controls muted loop playsinline preload="metadata" poster="creative/nte-poster.jfif"><source src="creative/nte-campaign.mp4" type="video/mp4"><img src="creative/nte-poster.jfif" alt="Neverness to Everness campaign artwork"></video><span class="mono campaign-caption">NTE / IMAGE 2026 CREATIVE</span>';
-  }
-}
