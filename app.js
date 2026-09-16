@@ -187,3 +187,28 @@ if (document.body.dataset.page === 'article' && cornerstoneGuides[slug]) {
   document.querySelector('[data-dek]').textContent = guide.dek;
   document.querySelector('[data-body]').innerHTML = guide.body;
 }
+
+if (document.body.dataset.page === 'home') {
+  const setupHeading = document.querySelector('#setup')?.closest('.section-head');
+  const featureGrid = setupHeading?.nextElementSibling;
+
+  if (setupHeading && featureGrid && !document.querySelector('.setup-guide-cards')) {
+    const setupCards = document.createElement('section');
+    setupCards.className = 'cards setup-guide-cards';
+    setupCards.setAttribute('aria-label', 'Gaming PC setup guides');
+    setupCards.innerHTML = `
+      <article class="card">
+        <div class="thumb coral"><span class="mono">SETUP · UPGRADE</span></div>
+        <div class="card-body"><div class="meta"><span>08 MIN READ</span><span>BUDGET GUIDE</span></div><h3><a href="article.html?slug=best-budget-gaming-pc-upgrade-order">Best Budget Gaming PC Upgrade Order</a></h3><p>Find the real bottleneck and spend your upgrade budget where it will make the biggest difference.</p></div>
+      </article>
+      <article class="card">
+        <div class="thumb"><span class="mono">SETUP · QUIET PC</span></div>
+        <div class="card-body"><div class="meta"><span>07 MIN READ</span><span>COOLING</span></div><h3><a href="article.html?slug=quiet-gaming-pc-setup">How to Build a Quieter Gaming PC Setup</a></h3><p>Reduce noise with cleaner airflow, measured fan curves, sensible power limits, and focused upgrades.</p></div>
+      </article>
+      <article class="card">
+        <div class="thumb mint"><span class="mono">SETUP · 144HZ+</span></div>
+        <div class="card-body"><div class="meta"><span>07 MIN READ</span><span>SMOOTHER PLAY</span></div><h3><a href="article.html?slug=pc-settings-for-high-refresh-gaming">Best PC Settings for High-Refresh Gaming</a></h3><p>Configure refresh rate, adaptive sync, frame caps, latency settings, and graphics options for smoother gaming.</p></div>
+      </article>`;
+    featureGrid.before(setupCards);
+  }
+}

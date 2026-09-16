@@ -60,6 +60,7 @@ nav a:hover, nav a:focus-visible { color: var(--text); }
 .section-head h2 { font: 700 1.4rem var(--display); letter-spacing: -.035em; margin: 0; }
 .section-head span { color: var(--muted); }
 .cards { display: grid; gap: 16px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.setup-guide-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-bottom: 24px; }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: border-color .18s, transform .18s; }
 .card:hover { border-color: var(--mint); transform: translateY(-3px); }
 .thumb { aspect-ratio: 16/9; background: linear-gradient(135deg, rgba(24,45,105,.35), rgba(92,124,250,.8)), url('gamerzeta-guides.png') center/cover; position: relative; }
