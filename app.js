@@ -8,9 +8,9 @@ const articles = [
   ['nte-pc-first-impressions','Reviews','NTE','NTE on PC Review: A Promising First Look With Work to Do','An early PC verdict focused on presentation, controls, performance, and whether the first session earns a return visit.'],
   ['star-trek-fleet-command-pc-review','Reviews','Star Trek Fleet Command','Star Trek Fleet Command on PC Review: A Patient Strategy Loop','A measured review covering its long-term loop, interface comfort, and free-to-play pressure.'],
   ['raid-shadow-legends-pc-review','Reviews','Raid: Shadow Legends','Raid: Shadow Legends on PC Review: Strong Presentation, Heavy Grind','A polished roster builder with a satisfying core, but time and spending pressure deserve an honest verdict.'],
-  ['best-budget-gaming-pc-upgrade-order','Setup','Gaming PC','The Best Upgrade Order for a Budget Gaming PC','A practical way to decide what to upgrade first when your gaming PC budget is limited.'],
-  ['quiet-gaming-pc-setup','Setup','Gaming PC','How to Build a Quieter Gaming PC Setup','Reduce distracting noise with sensible fan curves, clean airflow, better placement, and patience.'],
-  ['pc-settings-for-high-refresh-gaming','Setup','Gaming PC','High-Refresh PC Gaming Setup: Settings That Actually Matter','A clean checklist covering display mode, frame caps, latency, and motion clarity.']
+  ['best-budget-gaming-pc-upgrade-order','Setup','Gaming PC','Best Budget Gaming PC Upgrade Order: Where to Spend First','Find the real bottleneck and spend your upgrade budget where it will make the biggest difference.'],
+  ['quiet-gaming-pc-setup','Setup','Gaming PC','How to Build a Quieter Gaming PC Setup','Reduce noise with cleaner airflow, measured fan curves, sensible power limits, and focused upgrades.'],
+  ['pc-settings-for-high-refresh-gaming','Setup','Gaming PC','Best PC Settings for High-Refresh Gaming','Configure refresh rate, adaptive sync, frame caps, latency settings, and graphics options for smoother gaming.']
 ];
 const esc = s => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const gameImages = { 'NTE':'affiliate-assets/nte-hero-clean.jpg', 'Star Trek Fleet Command':'affiliate-assets/star-trek-affiliate-clean.jpg', 'Raid: Shadow Legends':'affiliate-assets/raid-affiliate-clean.jpg' }; const articleImages = { 'nte-pc-beginner-guide':'affiliate-assets/nte-hero-clean.jpg', 'star-trek-fleet-command-pc-guide':'affiliate-assets/star-trek-affiliate-clean.jpg', 'raid-shadow-legends-pc-progression-guide':'affiliate-assets/raid-affiliate-clean.jpg', 'nte-pc-launch-watch':'nte-official-promo.png', 'star-trek-fleet-command-pc-update':'gamerzeta-hero.png', 'raid-shadow-legends-pc-roundup':'gamerzeta-setup.png', 'nte-pc-first-impressions':'affiliate-assets/nte-article-clean.jpg', 'star-trek-fleet-command-pc-review':'gamerzeta-guides.png', 'raid-shadow-legends-pc-review':'gamerzeta-hero.png', 'best-budget-gaming-pc-upgrade-order':'gamerzeta-setup.png', 'quiet-gaming-pc-setup':'gamerzeta-guides.png', 'pc-settings-for-high-refresh-gaming':'gamerzeta-stfc.png' };
@@ -137,6 +137,44 @@ const cornerstoneGuides = {
       <h2>Gamerzeta recommendation</h2>
       <p>Build one campaign carry, surround it with a functional support team, and spend only against the next measurable bottleneck. Progress becomes easier when every resource has a job.</p>
       <p class="source-note">Sources: Plarium’s official <a href="https://plarium.com/en/game/raid-shadow-legends/" rel="nofollow">Raid game page</a> and <a href="https://raid-support.plarium.com/hc/en-us/articles/360017238859-System-and-Device-Requirements" rel="nofollow">system requirements</a>, checked September 2026.</p>`
+  },
+  'best-budget-gaming-pc-upgrade-order': {
+    title: 'Best Budget Gaming PC Upgrade Order: Where to Spend First',
+    game: 'Gaming PC',
+    dek: 'Find the real bottleneck, choose a performance target, and spend your upgrade budget where it will make the biggest difference.',
+    body: `<p class="quick-answer"><strong>Quick answer:</strong> Fix stability first, add an SSD if you still use a hard drive, increase memory when normal gaming fills it, then choose a GPU or CPU upgrade based on measured limits in the games you actually play.</p>
+      <h2>Start with your performance target</h2><p>Choose the resolution, quality level, and frame rate you want. A 1080p 60 FPS target needs a different balance than 1440p at 144 Hz. Test the games you play most rather than relying on one synthetic score.</p>
+      <h2>Find the actual bottleneck</h2><p>Track frame rate, frame-time consistency, GPU usage, CPU usage, memory use, temperatures, and storage space. If the GPU remains near its limit while the processor has headroom, a graphics upgrade may help. If the GPU repeatedly waits while the CPU is heavily loaded, the processor or platform may be the limit.</p>
+      <h2>A sensible upgrade order</h2><ol><li>Fix crashes, overheating, or power-supply problems.</li><li>Add an SSD if games or Windows still run from a hard drive.</li><li>Increase memory when normal gaming approaches full usage.</li><li>Upgrade the GPU for higher resolution, quality, or frame rate.</li><li>Upgrade the CPU and platform when processor limits hold back the GPU.</li><li>Improve cooling and acoustics after performance is stable.</li></ol>
+      <h2>Check compatibility before buying</h2><p>Confirm motherboard support, power connectors, PSU capacity, case clearance, cooler clearance, memory type, and display connections. Measure twice before ordering a large graphics card or tower cooler.</p>
+      <h2>What each upgrade changes</h2><p>A GPU usually makes the largest visual-performance difference when the rest of the system can support it. Memory and SSD upgrades often improve responsiveness and consistency rather than dramatically increasing average FPS.</p>
+      <h2>Gamerzeta recommendation</h2><p>Measure first, solve the largest practical limit, and retest the same game after each change. Future affiliate links will be clearly labelled, with compatibility placed ahead of commission value.</p>`
+  },
+  'quiet-gaming-pc-setup': {
+    title: 'How to Build a Quieter Gaming PC Setup',
+    game: 'Gaming PC',
+    dek: 'Reduce gaming PC noise with cleaner airflow, measured fan curves, sensible power limits, and upgrades that solve the loudest source first.',
+    body: `<p class="quick-answer"><strong>Quick answer:</strong> Clean the airflow path, identify the loudest component, tune fan curves gradually, cap unnecessary frame rates, and replace only the part that remains noisy.</p>
+      <h2>Identify the sound before buying</h2><p>A loud system may be dominated by the GPU, CPU cooler, case fans, power supply, vibration, or an aggressive software profile. Listen during idle and during a real game so you know which source changes under load.</p>
+      <h2>Start with airflow and dust</h2><p>Clean filters, heatsinks, and fan blades. Make sure front intakes can breathe and that hot exhaust air is not trapped against a wall. Good airflow reduces the speed every fan needs to maintain safe temperatures.</p>
+      <h2>Tune fan curves gradually</h2><p>Use a moderate curve that responds to sustained temperature instead of every short spike. Test a demanding game for at least ten minutes, watch temperatures, and change one curve at a time.</p>
+      <h2>Control heat before replacing hardware</h2><p>A frame-rate cap can reduce unnecessary GPU power and fan noise in games that run far above the monitor’s useful range. A conservative power limit or undervolt can improve efficiency, but test stability carefully.</p>
+      <h2>Replace the loudest component first</h2><p>A better CPU cooler helps only when the CPU cooler is the problem. Larger, slower case fans may help a restricted case, while a different case can be the better answer when every intake is blocked.</p>
+      <h2>Quiet-PC checklist</h2><ul><li>Clean filters and heatsinks.</li><li>Confirm intake and exhaust direction.</li><li>Remove cables touching fan blades.</li><li>Set gradual fan curves.</li><li>Cap excessive frame rates.</li><li>Check temperatures during a real game.</li></ul>
+      <h2>Gamerzeta recommendation</h2><p>Aim for comfortable noise with safe temperatures, not silence at any cost. The best quiet setup remains stable throughout a long gaming session.</p>`
+  },
+  'pc-settings-for-high-refresh-gaming': {
+    title: 'Best PC Settings for High-Refresh Gaming',
+    game: 'Gaming PC',
+    dek: 'Configure refresh rate, adaptive sync, frame caps, latency settings, and graphics options for smoother PC gaming.',
+    body: `<p class="quick-answer"><strong>Quick answer:</strong> Select the monitor’s highest refresh rate in Windows, use its native resolution, enable adaptive sync when supported, and cap frame rate at a level the PC can sustain consistently.</p>
+      <h2>Set the display correctly</h2><p>Select the highest supported refresh rate in the operating system and game. Confirm the cable supports the intended resolution and refresh rate, then check that the game is using the correct display mode.</p>
+      <h2>Configure adaptive sync</h2><p>Enable the monitor’s variable-refresh feature and the matching GPU setting when supported. Adaptive sync works best when frame rate remains inside the display’s supported range.</p>
+      <h2>Use a stable frame target</h2><p>A consistent frame rate usually feels better than a higher number that swings constantly. Test a cap just below the refresh ceiling and compare frame-time smoothness in the same scene.</p>
+      <h2>Reduce latency carefully</h2><p>Use the game’s built-in low-latency option when it is available and stable. Avoid stacking several driver and in-game latency controls without testing, and close heavy background capture tools.</p>
+      <h2>Lower the settings that cost the most</h2><p>Shadows, volumetric effects, reflections, and ray tracing are often the first options to reduce. Texture quality can remain higher when the graphics card has enough video memory and the game is not showing streaming problems.</p>
+      <h2>Final checklist</h2><ul><li>Select the highest refresh rate in Windows.</li><li>Confirm native resolution and cable support.</li><li>Enable adaptive sync when supported.</li><li>Choose a sustainable frame cap.</li><li>Keep GPU headroom in demanding scenes.</li><li>Compare motion clarity, not only the FPS counter.</li></ul>
+      <h2>Gamerzeta recommendation</h2><p>Tune for consistent frame times first. Once the game feels stable and responsive, spend the remaining performance budget on the visual settings that help you read and enjoy the game.</p>`
   }
 };
 
