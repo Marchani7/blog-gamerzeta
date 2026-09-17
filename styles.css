@@ -300,3 +300,13 @@ body[data-page="archive"] main.wrap{display:block}
 .feed-promo-copy p{color:var(--muted);line-height:1.5;margin:0;max-width:38rem}
 .feed-promo-copy .btn{margin-top:auto}
 @media(max-width:760px){.feed-promo{grid-template-columns:1fr}.feed-promo-visual{min-height:150px}.feed-promo-copy{padding:20px}.feed-promo-copy .btn{margin-top:8px}}
+
+/* Category feed alignment: keep the right ad rail fixed while content fills the left column. */
+@media (min-width:901px){
+  body[data-page="category"] main.wrap{grid-template-rows:auto auto auto auto}
+  body[data-page="category"] .ad-band{grid-column:1 / -1;grid-row:1}
+  body[data-page="category"] .hero{grid-column:1;grid-row:2}
+  body[data-page="category"] .ad-rail{grid-column:2;grid-row:2 / span 3;align-self:start}
+  body[data-page="category"] .section-head{grid-column:1;grid-row:3}
+  body[data-page="category"] .cards{grid-column:1;grid-row:4}
+}
