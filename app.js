@@ -254,7 +254,16 @@ if (document.body.dataset.page === 'game') {
   const art = document.querySelector('[data-game-art]');
   if (art) art.style.backgroundImage = `linear-gradient(135deg,rgba(8,11,20,.12),rgba(8,11,20,.5)),url('${gameImages[config.name]}')`;
   const grid = document.querySelector('[data-game-grid]');
-  if (grid) grid.innerHTML = articles.filter(a => a[2] === config.name).map(card).join('');
+  if (grid) {
+    const items = articles.filter(a => a[2] === config.name);
+    if (gameKey === 'star-trek-fleet-command') {
+      const update = items.find(a => a[0] === 'star-trek-fleet-command-pc-update');
+      const remaining = items.filter(a => a[0] !== 'star-trek-fleet-command-pc-guide' && a[0] !== 'star-trek-fleet-command-pc-update');
+      grid.innerHTML = (update ? `<article class="card game-text-card"><div class="card-body"><div class="meta"><span>NEWS</span><span>UPDATE WATCH</span></div><h3><a href="article.html?slug=${update[0]}">${esc(update[3])}</a></h3><p>${esc(update[4])}</p></div></article>` : '') + remaining.map(card).join('');
+    } else {
+      grid.innerHTML = items.map(card).join('');
+    }
+  }
 }
 
 // Add one footer promotional banner to focused game hubs and listing pages.
