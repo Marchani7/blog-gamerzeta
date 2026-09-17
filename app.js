@@ -205,3 +205,11 @@ if (document.body.dataset.page === 'archive') {
   document.querySelectorAll('[data-archive-filter]').forEach(button=>button.addEventListener('click',()=>{activeFilter=button.dataset.archiveFilter;document.querySelectorAll('[data-archive-filter]').forEach(item=>item.classList.toggle('is-active',item===button));renderArchive();}));
   search.addEventListener('input',renderArchive); renderArchive();
 }
+
+// Add one responsive promotional banner at the end of listing pages only.
+if (['category','archive'].includes(document.body.dataset.page)) {
+  const footer = document.querySelector('footer');
+  if (footer && !document.querySelector('.footer-ad-band')) {
+    footer.insertAdjacentHTML('beforebegin', '<div class="wrap footer-ad-band"><div class="ad-band">'+creativeBanner+'</div></div>');
+  }
+}
