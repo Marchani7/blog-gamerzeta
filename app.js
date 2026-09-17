@@ -214,21 +214,48 @@ if (['category','archive'].includes(document.body.dataset.page)) {
   }
 }
 
-// Focused game hub: keep each game's coverage together and exclude unrelated titles.
+// Focused game hubs: each title gets its own content feed and identity.
 if (document.body.dataset.page === 'game') {
   const gameKey = qs.get('game') || 'arena-breakout-infinite';
-  const gameName = gameKey === 'arena-breakout-infinite' ? 'Arena Breakout: Infinite' : 'Arena Breakout: Infinite';
-  document.title = `${gameName} — Gamerzeta`;
-  document.querySelectorAll('[data-title]').forEach(el => { el.textContent = gameName; });
+  const gameConfig = {
+    'arena-breakout-infinite': {
+      name: 'Arena Breakout: Infinite',
+      dek: 'PC guides, beginner tactics, settings, and first-session coverage.',
+      intro: '<strong>Start here:</strong> Learn a safer first-raid routine, choose sustainable gear, and tune your PC before taking higher-risk fights.',
+      heading: 'Arena Breakout coverage'
+    },
+    'star-trek-fleet-command': {
+      name: 'Star Trek Fleet Command',
+      dek: 'PC guides, fleet planning, update notes, and a calmer route through long-term progression.',
+      intro: '<strong>Start here:</strong> Build around one Operations milestone, keep research active, and grow your fleet without wasting early resources.',
+      heading: 'Star Trek Fleet Command coverage'
+    },
+    'raid-shadow-legends': {
+      name: 'Raid: Shadow Legends',
+      dek: 'PC progression guides, roster decisions, event value, and honest reviews for long-term players.',
+      intro: '<strong>Start here:</strong> Build one reliable early team, protect scarce resources, and make every upgrade serve your next milestone.',
+      heading: 'Raid: Shadow Legends coverage'
+    }
+  };
+  const config = gameConfig[gameKey] || gameConfig['arena-breakout-infinite'];
+  document.title = `${config.name} — Gamerzeta`;
+  document.querySelectorAll('[data-title]').forEach(el => { el.textContent = config.name; });
   const dek = document.querySelector('[data-dek]');
-  if (dek) dek.textContent = 'PC guides, beginner tactics, settings, and first-session coverage.';
+  if (dek) dek.textContent = config.dek;
   const intro = document.querySelector('[data-game-intro]');
-  if (intro) intro.innerHTML = '<strong>Start here:</strong> Learn a safer first-raid routine, choose sustainable gear, and tune your PC before taking higher-risk fights.';
+  if (intro) intro.innerHTML = config.intro;
+  const heading = document.querySelector('[data-game-heading]');
+  if (heading) heading.textContent = config.heading;
   const art = document.querySelector('[data-game-art]');
-  if (art) art.style.backgroundImage = `linear-gradient(135deg,rgba(8,11,20,.12),rgba(8,11,20,.5)),url('${gameImages[gameName]}')`;
+  if (art) art.style.backgroundImage = `linear-gradient(135deg,rgba(8,11,20,.12),rgba(8,11,20,.5)),url('${gameImages[config.name]}')`;
   const grid = document.querySelector('[data-game-grid]');
-  if (grid) {
-    const items = articles.filter(a => a[2] === gameName);
-    grid.innerHTML = items.map(card).join('');
+  if (grid) grid.innerHTML = articles.filter(a => a[2] === config.name).map(card).join('');
+}
+
+// Add one footer promotional banner to focused game hubs and listing pages.
+if (['category','archive','game'].includes(document.body.dataset.page)) {
+  const footer = document.querySelector('footer');
+  if (footer && !document.querySelector('.footer-ad-band')) {
+    footer.insertAdjacentHTML('beforebegin', '<div class="wrap footer-ad-band"><div class="ad-band">'+creativeBanner+'</div></div>');
   }
 }
