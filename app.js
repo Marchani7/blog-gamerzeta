@@ -197,7 +197,7 @@ if (document.body.dataset.page === 'home') {
 }
 // Make the archive visible across the whole site and power its search/filter controls.
 document.querySelectorAll('nav').forEach(nav => { if (!nav.querySelector('a[href="archive.html"]')) nav.insertAdjacentHTML('beforeend','<a href="archive.html">Archive</a>'); });
-document.querySelectorAll('.section-head').forEach(head => { if (head.textContent.includes('All coverage')) { const marker=head.querySelector('span'); if(marker) marker.outerHTML='<a class="mono" href="archive.html">All coverage →</a>'; } });
+
 if (document.body.dataset.page === 'archive') {
   const grid=document.querySelector('[data-archive-grid]'), search=document.querySelector('[data-archive-search]'), count=document.querySelector('[data-archive-count]'), empty=document.querySelector('[data-archive-empty]');
   let activeFilter='All';
