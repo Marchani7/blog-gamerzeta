@@ -637,3 +637,17 @@ body[data-page="article"] .article-page h1{font-size:clamp(1.85rem,3.2vw,2.8rem)
   body[data-page="article"] .ad-sky{clear:right;float:right;margin:24px 0 24px 24px !important}
   body[data-page="article"] .prose{max-width:700px;margin-top:0;padding-top:0}
 }
+
+/* Focused Arena Breakout hub: keep the shared hero compact and mobile-safe. */
+body[data-page="game"] { overflow-x: hidden; }
+body[data-page="game"] .hero { grid-template-columns: minmax(0,1fr) minmax(240px,.9fr); }
+body[data-page="game"] .hero-art { min-width: 0; background-position: center; }
+@media (max-width: 900px) {
+  body[data-page="game"] .hero { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+}
+@media (max-width: 760px) {
+  body[data-page="game"] .wrap { width: min(100% - 28px, 1180px); }
+  body[data-page="game"] .hero { grid-template-columns: 1fr; padding-top: 42px; }
+  body[data-page="game"] .hero-art { min-height: 220px; width: 100%; }
+  body[data-page="game"] .cards { grid-template-columns: 1fr; }
+}
