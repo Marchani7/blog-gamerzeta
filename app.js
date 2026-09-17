@@ -276,6 +276,17 @@ if (['category','archive','game'].includes(document.body.dataset.page)) {
 if (document.body.dataset.page === 'game') {
   document.querySelectorAll('.game-footer-banner, .footer-ad-band').forEach(el => el.remove());
 }
+// Arena Breakout footer creative: one shared 970x250 unit, below content and above the footer.
+if (document.body.dataset.page === 'game' && qs.get('game') === 'arena-breakout-infinite' && !document.querySelector('.arena-footer-ad')) {
+  const footer = document.querySelector('footer');
+  if (footer) {
+    if (!document.getElementById('arena-footer-ad-styles')) {
+      document.head.insertAdjacentHTML('beforeend', '<style id="arena-footer-ad-styles">.arena-footer-ad{width:min(970px,100%);aspect-ratio:970/250;margin:30px auto 26px;border:1px solid #ff6b2c;background:#090c12;overflow:hidden}.arena-footer-link{display:block;position:relative;height:100%;color:#f5f7fb;text-decoration:none}.arena-footer-visual{position:absolute;inset:0;overflow:hidden}.arena-footer-visual img{position:absolute;inset:0 auto 0 0;width:57%;height:100%;object-fit:cover;opacity:0;animation:arenaFooterFade 10s steps(1,end) infinite}.arena-footer-visual img:nth-child(2){animation-delay:5s}.arena-footer-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,12,18,.08) 0%,rgba(9,12,18,.18) 40%,#090c12 68%,#090c12 100%)}.arena-footer-copy{position:absolute;z-index:1;right:5%;top:50%;width:39%;transform:translateY(-50%);text-align:left}.arena-footer-copy .mono{display:block;color:#ff6b2c;font-size:.68rem;letter-spacing:.16em}.arena-footer-copy h3{margin:10px 0 8px;font-size:clamp(1.25rem,3vw,2.3rem);line-height:.96;text-transform:uppercase;letter-spacing:.02em}.arena-footer-copy p{margin:0 0 16px;color:#b9c1d1;font-size:clamp(.72rem,1.2vw,.94rem);line-height:1.35}.arena-footer-cta{display:inline-block;background:#ff6b2c;color:#090c12;padding:9px 13px;font:700 .7rem/1 monospace;letter-spacing:.08em;text-transform:uppercase}.arena-footer-link:hover .arena-footer-cta{background:#ff8a55}@keyframes arenaFooterFade{0%,45%{opacity:1}50%,95%{opacity:0}100%{opacity:1}}@media(max-width:640px){.arena-footer-ad{margin:24px auto 20px}.arena-footer-visual img{width:100%}.arena-footer-visual:after{background:linear-gradient(90deg,rgba(9,12,18,.2),rgba(9,12,18,.86) 60%,#090c12)}.arena-footer-copy{right:5%;width:55%}.arena-footer-copy h3{font-size:clamp(1rem,5vw,1.45rem)}.arena-footer-copy p{font-size:.68rem;margin-bottom:10px}.arena-footer-cta{padding:7px 9px;font-size:.58rem}}</style>');
+    }
+    footer.insertAdjacentHTML('beforebegin', '<section class="arena-footer-ad" aria-label="Advertisement"><a class="arena-footer-link" href="article.html?slug=arena-breakout-infinite-pc-guide" aria-label="Explore Arena Breakout: Infinite on Gamerzeta"><div class="arena-footer-visual"><img src="affiliate-assets/arena-breakout-campaign-1.jpg" alt="Arena Breakout: Infinite tactical extraction scene"><img src="affiliate-assets/arena-breakout-campaign-2.jpg" alt="" aria-hidden="true"></div><div class="arena-footer-copy"><span class="mono">FEATURED / ARENA BREAKOUT: INFINITE</span><h3>Plan the raid. Take the loot.</h3><p>Learn the safer route, tune your PC, and make every extraction count.</p><span class="arena-footer-cta">Explore the guide →</span></div></a></section>');
+  }
+}
+
 if (document.body.dataset.page === 'article') {
   const removeArticleDownBanner = () => document.querySelectorAll('.ad-anchor').forEach(el => el.remove());
   removeArticleDownBanner();
