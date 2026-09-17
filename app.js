@@ -274,7 +274,7 @@ if (['category','archive','game'].includes(document.body.dataset.page)) {
   }
 }
 if (document.body.dataset.page === 'game') {
-  document.querySelectorAll('.game-footer-banner').forEach(el => el.remove());
+  document.querySelectorAll('.game-footer-banner, .footer-ad-band').forEach(el => el.remove());
 }
 if (document.body.dataset.page === 'article') {
   const removeArticleDownBanner = () => document.querySelectorAll('.ad-anchor').forEach(el => el.remove());
