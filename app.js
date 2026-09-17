@@ -213,3 +213,22 @@ if (['category','archive'].includes(document.body.dataset.page)) {
     footer.insertAdjacentHTML('beforebegin', '<div class="wrap footer-ad-band"><div class="ad-band">'+creativeBanner+'</div></div>');
   }
 }
+
+// Focused game hub: keep each game's coverage together and exclude unrelated titles.
+if (document.body.dataset.page === 'game') {
+  const gameKey = qs.get('game') || 'arena-breakout-infinite';
+  const gameName = gameKey === 'arena-breakout-infinite' ? 'Arena Breakout: Infinite' : 'Arena Breakout: Infinite';
+  document.title = `${gameName} — Gamerzeta`;
+  document.querySelectorAll('[data-title]').forEach(el => { el.textContent = gameName; });
+  const dek = document.querySelector('[data-dek]');
+  if (dek) dek.textContent = 'PC guides, beginner tactics, settings, and first-session coverage.';
+  const intro = document.querySelector('[data-game-intro]');
+  if (intro) intro.innerHTML = '<strong>Start here:</strong> Learn a safer first-raid routine, choose sustainable gear, and tune your PC before taking higher-risk fights.';
+  const art = document.querySelector('[data-game-art]');
+  if (art) art.style.backgroundImage = `linear-gradient(135deg,rgba(8,11,20,.12),rgba(8,11,20,.5)),url('${gameImages[gameName]}')`;
+  const grid = document.querySelector('[data-game-grid]');
+  if (grid) {
+    const items = articles.filter(a => a[2] === gameName);
+    grid.innerHTML = items.map(card).join('');
+  }
+}
