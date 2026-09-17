@@ -292,8 +292,8 @@ if (document.body.dataset.page === 'game') {
     new MutationObserver(placeGameFooterBanner).observe(document.body, {childList:true});
   }
 }
-if (document.body.dataset.page === 'article' && (slug?.startsWith('star-trek-fleet-command') || slug?.startsWith('raid-shadow-legends'))) {
-  const removeRelatedTopBanner = () => document.querySelectorAll('.ad-band').forEach(el => el.remove());
-  removeRelatedTopBanner();
-  new MutationObserver(removeRelatedTopBanner).observe(document.body, {childList:true});
+if (document.body.dataset.page === 'article') {
+  const removeArticleDownBanner = () => document.querySelectorAll('.ad-anchor').forEach(el => el.remove());
+  removeArticleDownBanner();
+  new MutationObserver(removeArticleDownBanner).observe(document.body, {childList:true});
 }
