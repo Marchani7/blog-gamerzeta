@@ -651,3 +651,26 @@ body[data-page="game"] .hero-art { min-width: 0; background-position: center; }
   body[data-page="game"] .hero-art { min-height: 220px; width: 100%; }
   body[data-page="game"] .cards { grid-template-columns: 1fr; }
 }
+
+/* Arena Breakout hub layout: compact title, focused content column, right-side ad rail. */
+body[data-page="game"] .ad-band { margin-bottom: 18px; }
+body[data-page="game"] .game-hub-hero { grid-template-columns: minmax(0,1fr) minmax(280px,1.1fr); padding-top: 34px; padding-bottom: 28px; }
+body[data-page="game"] .game-hub-hero h1 { font-size: clamp(2rem,3.4vw,3.2rem); line-height: 1; letter-spacing: -0.055em; max-width: 440px; }
+body[data-page="game"] .game-hub-layout { display: grid; grid-template-columns: minmax(0,1fr) 300px; gap: 28px; align-items: start; }
+body[data-page="game"] .game-hub-main { min-width: 0; }
+body[data-page="game"] .game-hub-main .quick-answer { margin-top: 0; }
+body[data-page="game"] .game-hub-main .section-head { margin-top: 26px; }
+body[data-page="game"] .game-hub-rail { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-top: 0; }
+body[data-page="game"] .game-hub-rail .ad-rectangle { width: 300px; height: 250px; }
+body[data-page="game"] .game-hub-rail .ad-sky { width: 160px; height: 600px; }
+@media (max-width: 900px) {
+  body[data-page="game"] .game-hub-layout { grid-template-columns: 1fr; }
+  body[data-page="game"] .game-hub-rail { align-items: center; }
+}
+@media (max-width: 760px) {
+  body[data-page="game"] .game-hub-hero { grid-template-columns: 1fr; padding-top: 26px; padding-bottom: 20px; }
+  body[data-page="game"] .game-hub-hero h1 { font-size: clamp(2rem,10vw,2.8rem); max-width: 360px; }
+  body[data-page="game"] .game-hub-hero .hero-art { min-height: 210px; }
+  body[data-page="game"] .game-hub-layout { gap: 24px; }
+  body[data-page="game"] .game-hub-rail { display: grid; grid-template-columns: 1fr; justify-items: center; }
+}
