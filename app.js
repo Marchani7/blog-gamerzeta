@@ -222,19 +222,22 @@ if (document.body.dataset.page === 'game') {
       name: 'Arena Breakout: Infinite',
       dek: 'PC guides, beginner tactics, settings, and first-session coverage.',
       intro: '<strong>Start here:</strong> Learn a safer first-raid routine, choose sustainable gear, and tune your PC before taking higher-risk fights.',
-      heading: 'Arena Breakout coverage'
+      heading: 'Arena Breakout coverage',
+      label: 'ARENA BREAKOUT / PC COVERAGE'
     },
     'star-trek-fleet-command': {
       name: 'Star Trek Fleet Command',
       dek: 'PC guides, fleet planning, update notes, and a calmer route through long-term progression.',
       intro: '<strong>Start here:</strong> Build around one Operations milestone, keep research active, and grow your fleet without wasting early resources.',
-      heading: 'Star Trek Fleet Command coverage'
+      heading: 'Star Trek Fleet Command coverage',
+      label: 'STAR TREK / PC COVERAGE'
     },
     'raid-shadow-legends': {
       name: 'Raid: Shadow Legends',
       dek: 'PC progression guides, roster decisions, event value, and honest reviews for long-term players.',
       intro: '<strong>Start here:</strong> Build one reliable early team, protect scarce resources, and make every upgrade serve your next milestone.',
-      heading: 'Raid: Shadow Legends coverage'
+      heading: 'Raid: Shadow Legends coverage',
+      label: 'RAID / PC COVERAGE'
     }
   };
   const config = gameConfig[gameKey] || gameConfig['arena-breakout-infinite'];
@@ -246,6 +249,8 @@ if (document.body.dataset.page === 'game') {
   if (intro) intro.innerHTML = config.intro;
   const heading = document.querySelector('[data-game-heading]');
   if (heading) heading.textContent = config.heading;
+  const label = document.querySelector('[data-game-label]');
+  if (label) label.textContent = config.label;
   const art = document.querySelector('[data-game-art]');
   if (art) art.style.backgroundImage = `linear-gradient(135deg,rgba(8,11,20,.12),rgba(8,11,20,.5)),url('${gameImages[config.name]}')`;
   const grid = document.querySelector('[data-game-grid]');
