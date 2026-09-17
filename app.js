@@ -274,23 +274,7 @@ if (['category','archive','game'].includes(document.body.dataset.page)) {
   }
 }
 if (document.body.dataset.page === 'game') {
-  const gameId = new URLSearchParams(window.location.search).get('game');
-  if (gameId === 'star-trek-fleet-command' || gameId === 'raid-shadow-legends') {
-    const placeGameFooterBanner = () => {
-      document.querySelectorAll('.ad-band').forEach(el => el.remove());
-      if (!document.querySelector('.game-footer-banner')) {
-        const footer = document.querySelector('footer');
-        if (footer) {
-          const wrap = document.createElement('div');
-          wrap.className = 'game-footer-banner';
-          wrap.innerHTML = '<div class="wrap">' + creativeBanner + '</div>';
-          footer.parentNode.insertBefore(wrap, footer);
-        }
-      }
-    };
-    placeGameFooterBanner();
-    new MutationObserver(placeGameFooterBanner).observe(document.body, {childList:true});
-  }
+  document.querySelectorAll('.game-footer-banner').forEach(el => el.remove());
 }
 if (document.body.dataset.page === 'article') {
   const removeArticleDownBanner = () => document.querySelectorAll('.ad-anchor').forEach(el => el.remove());
