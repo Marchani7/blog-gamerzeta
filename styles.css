@@ -626,3 +626,7 @@ body[data-page="archive"] main.wrap{display:block}
   body[data-page="category"] .section-head{grid-column:1;grid-row:3}
   body[data-page="category"] .cards{grid-column:1;grid-row:4}
 }
+
+/* Article-only polish: compact the opening and give the headline a calmer editorial scale. */
+body[data-page="article"] .article-page{padding-top:16px !important}
+body[data-page="article"] .article-page h1{font-size:clamp(1.85rem,3.2vw,2.8rem) !important;line-height:1.04}
