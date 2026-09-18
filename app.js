@@ -181,15 +181,15 @@ if (document.body.dataset.page === 'home') {
     setupCards.setAttribute('aria-label', 'Gaming PC setup guides');
     setupCards.innerHTML = `
       <article class="card">
-        <div class="thumb coral"><span class="mono">SETUP · UPGRADE</span></div>
+        <div class="thumb coral"><img src="affiliate-assets/session-build.png" alt="Gaming PC components ready for an upgrade" loading="lazy"><span class="mono">SETUP · UPGRADE</span></div>
         <div class="card-body"><div class="meta"><span>08 MIN READ</span><span>BUDGET GUIDE</span></div><h3><a href="article.html?slug=best-budget-gaming-pc-upgrade-order">Best Budget Gaming PC Upgrade Order</a></h3><p>Find the real bottleneck and spend your upgrade budget where it will make the biggest difference.</p></div>
       </article>
       <article class="card">
-        <div class="thumb"><span class="mono">SETUP · QUIET PC</span></div>
+        <div class="thumb"><img src="affiliate-assets/session-frames.png" alt="Gaming PC display and desk setup" loading="lazy"><span class="mono">SETUP · QUIET PC</span></div>
         <div class="card-body"><div class="meta"><span>07 MIN READ</span><span>COOLING</span></div><h3><a href="article.html?slug=quiet-gaming-pc-setup">How to Build a Quieter Gaming PC Setup</a></h3><p>Reduce noise with cleaner airflow, measured fan curves, sensible power limits, and focused upgrades.</p></div>
       </article>
       <article class="card">
-        <div class="thumb mint"><span class="mono">SETUP · 144HZ+</span></div>
+        <div class="thumb mint"><img src="affiliate-assets/session-games.png" alt="Multi-display gaming setup for smooth high-refresh play" loading="lazy"><span class="mono">SETUP · 144HZ+</span></div>
         <div class="card-body"><div class="meta"><span>07 MIN READ</span><span>SMOOTHER PLAY</span></div><h3><a href="article.html?slug=pc-settings-for-high-refresh-gaming">Best PC Settings for High-Refresh Gaming</a></h3><p>Configure refresh rate, adaptive sync, frame caps, latency settings, and graphics options for smoother gaming.</p></div>
       </article>`;
     featureGrid.before(setupCards);

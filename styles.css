@@ -70,6 +70,9 @@ nav a:hover, nav a:focus-visible { color: var(--text); }
 .card .thumb.game-stfc { background: linear-gradient(135deg, rgba(8,11,20,.18), rgba(92,124,250,.72)), url('gamerzeta-stfc.png') center/cover; }
 .card .thumb.game-raid { background: linear-gradient(135deg, rgba(8,11,20,.18), rgba(255,91,110,.62)), url('gamerzeta-raid.png') center/cover; }
 .thumb span { bottom: 12px; left: 14px; position: absolute; }
+.setup-guide-cards .thumb img { height: 100%; inset: 0; object-fit: cover; position: absolute; width: 100%; }
+.setup-guide-cards .thumb::after { background: linear-gradient(180deg, rgba(8,11,20,.08), rgba(8,11,20,.56)); content: ""; inset: 0; pointer-events: none; position: absolute; }
+.setup-guide-cards .thumb > .mono { position: relative; z-index: 1; }
 .card-body { padding: 18px; }
 .card-body h3 { font: 700 1.08rem/1.18 var(--display); margin: 10px 0 12px; }
 .card-body p { color: var(--muted); font-size: .92rem; line-height: 1.5; margin: 0; }
