@@ -37,13 +37,13 @@ const homeBottomCreative = '<a class="home-footer-banner" href="article.html?slu
 if (document.body.dataset.page === 'home' && !document.querySelector('.home-footer-ad')) { const footer=document.querySelector('footer'); if (footer) { const homeFooter=document.createElement('div'); homeFooter.className='wrap home-footer-ad'; homeFooter.innerHTML=homeBottomCreative+'<button type="button" aria-label="Close advertisement">×</button>'; homeFooter.querySelector('button').onclick=()=>homeFooter.remove(); const footerBottom=footer.querySelector('.footer-bottom'); if (footerBottom) footerBottom.before(homeFooter); else footer.append(homeFooter); } }if (document.body.dataset.page === 'article') { const main=document.querySelector('.article-page'); main.insertAdjacentHTML('afterbegin','<div class="ad-band">'+creativeBanner+'</div>'); const anchor=document.createElement('div'); anchor.className='ad-anchor'; anchor.innerHTML=bottomCreative; anchor.querySelector('button').onclick=()=>anchor.remove(); main.appendChild(anchor); window.addEventListener('scroll',()=>{if(window.scrollY>300) anchor.classList.add('is-visible')},{passive:true}); }
 
 // Keep the standard banner placement consistent across all secondary pages.
-if (!document.querySelector('.ad-band') && document.body.dataset.page !== 'home') {
+if (!document.querySelector('.ad-band') && !['home','legal'].includes(document.body.dataset.page)) {
   const main = document.querySelector('main');
   if (main) main.insertAdjacentHTML('afterbegin','<div class="ad-band">'+creativeBanner+'</div>');
 }
 
 // Give every non-article page the same separated rectangle + skyscraper rail.
-if (!document.querySelector('.ad-rail') && document.body.dataset.page !== 'article' && document.body.dataset.page !== 'home') {
+if (!document.querySelector('.ad-rail') && !['article','home','legal'].includes(document.body.dataset.page)) {
   const main = document.querySelector('main');
   const anchor = main && (main.querySelector('.hero') || main.firstElementChild);
   if (anchor) anchor.insertAdjacentHTML('afterend','<div class="ad-rail" aria-label="Advertisement"><div class="ad-slot ad-rectangle" aria-label="Advertisement"><span class="mono">ADVERTISEMENT</span><strong>300 × 250</strong></div><div class="ad-slot ad-sky" aria-label="Advertisement"><span class="mono">ADVERTISEMENT</span><strong>160 × 600</strong></div></div>');
