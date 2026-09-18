@@ -99,7 +99,7 @@ footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 70p
 .article-dek { color: var(--muted); font-size: 1.15rem; line-height: 1.6; max-width: 660px; }
 .article-meta { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); color: var(--muted); margin: 28px 0; padding: 15px 0; }
 .article-cover { background: linear-gradient(135deg, #182d69, var(--cobalt), var(--mint)); border-radius: var(--radius); min-height: 290px; }
-.article-cover.raid-roundup-cover { aspect-ratio: 16 / 9; background-color: #101729; background-position: center; background-repeat: no-repeat; background-size: cover !important; height: auto; max-width: 520px; min-height: 0; }
+.article-cover.raid-roundup-cover { aspect-ratio: 2.7 / 1; background-color: #101729; background-position: center 46%; background-repeat: no-repeat; background-size: cover !important; height: auto; max-width: none; min-height: 0; width: 100%; }
 .prose { font-size: 1.05rem; line-height: 1.75; max-width: 700px; padding: 32px 0; }
 .prose h2 { font: 700 1.65rem/1.15 var(--display); letter-spacing: -.04em; margin-top: 36px; }
 .article-hero-split { display: grid; grid-template-columns: 1fr 300px; gap: 32px; align-items: end; }
