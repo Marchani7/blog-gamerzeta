@@ -323,7 +323,7 @@ body[data-page="home"] .feed-promo-visual{min-height:190px!important}
 @media(max-width:760px){body[data-page="home"] .feed-promo-visual{min-height:125px!important}}
 
 /* Built for the session: a dedicated, text-free gaming setup image. */
-body[data-page="home"] .feature-grid .contest{background-image:linear-gradient(90deg,rgba(8,11,20,.9),rgba(8,11,20,.38)),url('affiliate-assets/upgrade-prize.png');background-position:center;background-size:cover}
+body[data-page="home"] .feature-grid .contest{background-image:linear-gradient(90deg,rgba(8,11,20,.9),rgba(8,11,20,.32)),url('affiliate-assets/upgrade-prize-v2.png');background-position:center;background-size:cover}
 
 /* Homepage Latest Signal artwork selected from the supplied image 26 assets. */
 body[data-page="home"] .cards#guides .card:nth-child(1) .thumb{background-image:url('affiliate-assets/latest-arena-card.jpg')!important;background-position:center!important}
