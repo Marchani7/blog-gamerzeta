@@ -721,5 +721,30 @@ body[data-page="game"] .game-hub-rail .ad-sky { width: 160px; height: 600px; }
   body[data-page="game"] .game-hub-hero h1 { font-size: clamp(2rem,10vw,2.8rem); max-width: 360px; }
   body[data-page="game"] .game-hub-hero .hero-art { min-height: 210px; }
   body[data-page="game"] .game-hub-layout { gap: 24px; }
-  body[data-page="game"] .game-hub-rail { display: grid; grid-template-columns: 1fr; justify-items: center; }
+body[data-page="game"] .game-hub-rail { display: grid; grid-template-columns: 1fr; justify-items: center; }
+}
+
+/* Final responsive pass: keep the editorial hierarchy readable on narrow screens. */
+@media (max-width: 760px) {
+  .wrap { width: min(calc(100% - 28px), 1180px); }
+  .topline .wrap { align-items: flex-start; flex-wrap: wrap; gap: 8px 14px; }
+  .nav { flex-wrap: wrap; gap: 14px; min-height: auto; padding: 14px 0; }
+  .brand-logo { margin-right: auto; }
+  .nav > nav { gap: 16px; margin-left: 0; order: 3; overflow-x: auto; padding-bottom: 3px; width: 100%; }
+  .nav > nav a { flex: 0 0 auto; white-space: nowrap; }
+  .hero { grid-template-columns: 1fr; padding: 42px 0 28px; }
+  .hero h1 { font-size: clamp(2.35rem, 11vw, 3.6rem); }
+  .hero-art { min-height: 220px; }
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feature-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; }
+  .footer-bottom { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .article-page { padding-top: 34px; }
+  .article-page h1 { font-size: clamp(2rem, 9vw, 3rem); }
+}
+@media (max-width: 560px) {
+  .cards { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .section-head { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .game-list { grid-template-columns: 1fr; }
 }
