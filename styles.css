@@ -310,6 +310,15 @@ body[data-page="home"] .feed-promo{min-height:190px}
 body[data-page="home"] .feed-promo-visual{min-height:190px}
 @media(max-width:760px){body[data-page="home"] .feed-promo-visual{min-height:125px}body[data-page="home"] .feed-promo-copy{padding:18px}}
 
+/* Final homepage override: keep the latest-signal artwork readable after legacy rules. */
+body[data-page="home"] .cards#guides .thumb{filter:contrast(1.12) saturate(1.14)}
+body[data-page="home"] .cards#guides .thumb::after{background:rgba(8,11,20,.08)!important}
+body[data-page="home"] .cards#guides .card:nth-child(3) .thumb{background-position:92% center!important}
+body[data-page="home"] .cards#guides .card:nth-child(4) .thumb{background-position:8% center!important}
+body[data-page="home"] .feed-promo{min-height:190px!important}
+body[data-page="home"] .feed-promo-visual{min-height:190px!important}
+@media(max-width:760px){body[data-page="home"] .feed-promo-visual{min-height:125px!important}}
+
 /* Category feed alignment: keep the right ad rail fixed while content fills the left column. */
 @media (min-width:901px){
   body[data-page="category"] main.wrap{grid-template-rows:auto auto auto auto}
