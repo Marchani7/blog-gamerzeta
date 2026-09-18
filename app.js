@@ -209,14 +209,6 @@ if (document.body.dataset.page === 'archive') {
   search.addEventListener('input',renderArchive); renderArchive();
 }
 
-// Add one responsive promotional banner at the end of listing pages only.
-if (['category','archive'].includes(document.body.dataset.page)) {
-  const footer = document.querySelector('footer');
-  if (footer && !document.querySelector('.footer-ad-band')) {
-    footer.insertAdjacentHTML('beforebegin', '<div class="wrap footer-ad-band"><div class="ad-band">'+creativeBanner+'</div></div>');
-  }
-}
-
 // Focused game hubs: each title gets its own content feed and identity.
 if (document.body.dataset.page === 'game') {
   const gameKey = qs.get('game') || 'arena-breakout-infinite';
@@ -268,28 +260,6 @@ if (document.body.dataset.page === 'game') {
     }
   }
 }
-
-// Add one footer promotional banner to focused game hubs and listing pages.
-if (['category','archive','game'].includes(document.body.dataset.page)) {
-  const footer = document.querySelector('footer');
-  if (footer && !document.querySelector('.footer-ad-band')) {
-    footer.insertAdjacentHTML('beforebegin', '<div class="wrap footer-ad-band"><div class="ad-band">'+creativeBanner+'</div></div>');
-  }
-}
-if (document.body.dataset.page === 'game') {
-  document.querySelectorAll('.game-footer-banner, .footer-ad-band').forEach(el => el.remove());
-}
-// Arena Breakout footer creative: crisp single-image 970x250 unit, below content and above the footer.
-if (document.body.dataset.page === 'game' && qs.get('game') === 'arena-breakout-infinite' && !document.querySelector('.arena-footer-ad')) {
-  const footer = document.querySelector('footer');
-  if (footer) {
-    if (!document.getElementById('arena-footer-ad-styles')) {
-      document.head.insertAdjacentHTML('beforeend', '<style id="arena-footer-ad-styles">.arena-footer-ad{width:min(970px,100%);aspect-ratio:970/250;height:auto;margin:30px auto 26px;border:1px solid #ff6b2c;background:#090c12;overflow:hidden}.arena-footer-link{display:block;position:relative;width:100%;height:100%;min-height:0;color:#f5f7fb;text-decoration:none}.arena-footer-visual{position:absolute;inset:0;overflow:hidden;background:#090c12}.arena-footer-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.01)}.arena-footer-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,12,18,.08) 0%,rgba(9,12,18,.16) 38%,rgba(9,12,18,.88) 73%,#090c12 100%)}.arena-footer-copy{position:absolute;z-index:1;right:5%;top:50%;width:40%;transform:translateY(-50%);text-align:left}.arena-footer-copy .mono{display:block;color:#ff6b2c;font-size:.68rem;letter-spacing:.16em}.arena-footer-copy h3{margin:10px 0 8px;font-size:clamp(1.25rem,3vw,2.3rem);line-height:.96;text-transform:uppercase;letter-spacing:.02em}.arena-footer-copy p{margin:0 0 16px;color:#d2d7df;font-size:clamp(.72rem,1.2vw,.94rem);line-height:1.35}.arena-footer-cta{display:inline-block;background:#ff6b2c;color:#090c12;padding:9px 13px;font:700 .7rem/1 monospace;letter-spacing:.08em;text-transform:uppercase}@media(max-width:640px){.arena-footer-ad{margin:24px auto 20px}.arena-footer-visual:after{background:linear-gradient(90deg,rgba(9,12,18,.16),rgba(9,12,18,.88) 62%,#090c12 100%)}.arena-footer-copy{right:5%;width:55%}.arena-footer-copy h3{font-size:clamp(1rem,5vw,1.45rem)}.arena-footer-copy p{font-size:.68rem;margin-bottom:10px}.arena-footer-cta{padding:7px 9px;font-size:.58rem}}</style>');
-    }
-    footer.insertAdjacentHTML('beforebegin', '<section class="arena-footer-ad" aria-label="Advertisement"><a class="arena-footer-link" href="article.html?slug=arena-breakout-infinite-pc-guide" aria-label="Explore Arena Breakout: Infinite on Gamerzeta"><div class="arena-footer-visual"><img src="affiliate-assets/arena-breakout-banner.png" alt="Arena Breakout: Infinite tactical extraction artwork"></div><div class="arena-footer-copy"><span class="mono">FEATURED / ARENA BREAKOUT: INFINITE</span><h3>Plan the raid. Take the loot.</h3><p>Learn the safer route, tune your PC, and make every extraction count.</p><span class="arena-footer-cta">Explore the guide →</span></div></a></section>');
-  }
-}
-
 
 if (document.body.dataset.page === 'article') {
   const removeArticleDownBanner = () => document.querySelectorAll('.ad-anchor').forEach(el => el.remove());
