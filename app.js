@@ -296,3 +296,17 @@ if (document.body.dataset.page === 'article') {
   removeArticleDownBanner();
   new MutationObserver(removeArticleDownBanner).observe(document.body, {childList:true});
 }
+
+// Use one consistent supplied footer creative across every non-home page.
+if (document.body.dataset.page !== 'home') {
+  const footer = document.querySelector('footer');
+  if (footer && !document.querySelector('.site-footer-ad')) {
+    document.querySelectorAll('.footer-ad-band, .arena-footer-ad, .game-footer-banner, .ad-anchor').forEach(el => el.remove());
+    const banner = document.createElement('div');
+    banner.className = 'wrap site-footer-ad';
+    banner.innerHTML = '<a class="site-footer-banner" href="article.html?slug=arena-breakout-infinite-pc-guide" aria-label="Explore Arena Breakout: Infinite coverage"><img src="affiliate-assets/arena-breakout-footer-994x102.png" alt="Arena Breakout: Infinite tactical extraction shooter promotion"></a><button type="button" aria-label="Close advertisement">×</button>';
+    banner.querySelector('button').onclick = () => banner.remove();
+    const footerBottom = footer.querySelector('.footer-bottom');
+    if (footerBottom) footerBottom.before(banner); else footer.append(banner);
+  }
+}
