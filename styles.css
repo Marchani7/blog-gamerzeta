@@ -100,6 +100,11 @@ footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 70p
 .article-meta { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); color: var(--muted); margin: 28px 0; padding: 15px 0; }
 .article-cover { background: linear-gradient(135deg, #182d69, var(--cobalt), var(--mint)); border-radius: var(--radius); min-height: 290px; overflow: hidden; position: relative; }
 .article-cover-image { display: block; height: 100%; inset: 0; object-fit: cover; object-position: center; position: absolute; width: 100%; }
+.bottom-creative-slide { animation: bottomCreativeFade 10s ease-in-out infinite; opacity: 0; }
+.bottom-creative-slide-a { opacity: 1; }
+.bottom-creative-slide-b { animation-delay: -5s; }
+@keyframes bottomCreativeFade { 0%,42% { opacity: 1; } 50%,92% { opacity: 0; } 100% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .bottom-creative-slide { animation: none; } .bottom-creative-slide-b { display: none; } .bottom-creative-slide-a { opacity: 1; } }
 .article-cover.raid-roundup-cover { aspect-ratio: 2.7 / 1; background-color: #101729; background-position: center 46%; background-repeat: no-repeat; background-size: cover !important; height: auto; max-width: none; min-height: 0; width: 100%; }
 .prose { font-size: 1.05rem; line-height: 1.75; max-width: 700px; padding: 32px 0; }
 .prose h2 { font: 700 1.65rem/1.15 var(--display); letter-spacing: -.04em; margin-top: 36px; }
