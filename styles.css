@@ -319,6 +319,12 @@ body[data-page="home"] .feed-promo{min-height:190px!important}
 body[data-page="home"] .feed-promo-visual{min-height:190px!important}
 @media(max-width:760px){body[data-page="home"] .feed-promo-visual{min-height:125px!important}}
 
+/* Homepage Latest Signal artwork selected from the supplied image 26 assets. */
+body[data-page="home"] .cards#guides .card:nth-child(1) .thumb{background-image:url('affiliate-assets/latest-nte.jfif')!important;background-position:center!important}
+body[data-page="home"] .cards#guides .card:nth-child(2) .thumb{background-image:url('affiliate-assets/latest-star-trek.jfif')!important;background-position:center!important}
+body[data-page="home"] .cards#guides .card:nth-child(3) .thumb{background-image:url('affiliate-assets/latest-raid-review.jfif')!important;background-position:center!important}
+body[data-page="home"] .cards#guides .card:nth-child(4) .thumb{background-image:url('affiliate-assets/latest-raid-guide.jfif')!important;background-position:center!important}
+
 /* Category feed alignment: keep the right ad rail fixed while content fills the left column. */
 @media (min-width:901px){
   body[data-page="category"] main.wrap{grid-template-rows:auto auto auto auto}
