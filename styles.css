@@ -192,6 +192,16 @@ footer { border-top: 1px solid var(--line); color: var(--muted); margin-top: 70p
   }
 }
 
+/* Keep the homepage footer creative visibly inside its own frame. */
+.home-ad-anchor .bottom-creative {
+  background: #101c32;
+  border: 1px solid var(--mint);
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 3px rgba(16,28,50,.96);
+}
+.home-ad-anchor .bottom-creative img { border-radius: 9px; object-fit: cover; }
+
 @media (max-width: 760px){.article-hero-ad{float:none!important;margin:24px auto!important;}}
 
 
