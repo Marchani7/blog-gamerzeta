@@ -320,7 +320,7 @@ body[data-page="home"] .feed-promo-visual{min-height:190px!important}
 @media(max-width:760px){body[data-page="home"] .feed-promo-visual{min-height:125px!important}}
 
 /* Built for the session: a dedicated, text-free gaming setup image. */
-body[data-page="home"] .feature-grid .contest{background-image:linear-gradient(90deg,rgba(8,11,20,.9),rgba(8,11,20,.38)),url('affiliate-assets/built-for-session.png');background-position:center;background-size:cover}
+body[data-page="home"] .feature-grid .contest{background-image:linear-gradient(90deg,rgba(8,11,20,.9),rgba(8,11,20,.38)),url('affiliate-assets/upgrade-prize.png');background-position:center;background-size:cover}
 body[data-page="home"] .feature-grid .stats .stat:nth-child(1){background-image:linear-gradient(rgba(8,11,20,.2),rgba(8,11,20,.55)),url('affiliate-assets/session-frames.png');background-position:center;background-size:cover}
 body[data-page="home"] .feature-grid .stats .stat:nth-child(2){background-image:linear-gradient(rgba(8,11,20,.2),rgba(8,11,20,.55)),url('affiliate-assets/session-build.png');background-position:center;background-size:cover}
 body[data-page="home"] .feature-grid .stats .stat:nth-child(3){background-image:linear-gradient(rgba(8,11,20,.2),rgba(8,11,20,.55)),url('affiliate-assets/session-games.png');background-position:center;background-size:cover}
