@@ -290,6 +290,14 @@ if (document.body.dataset.page === 'game' && qs.get('game') === 'arena-breakout-
   }
 }
 
+// Keep the supplied compact Arena Breakout creative available as a clean footer promo on STFC.
+if (document.body.dataset.page === 'game' && qs.get('game') === 'star-trek-fleet-command' && !document.querySelector('.stfc-footer-ad')) {
+  const footer = document.querySelector('footer');
+  if (footer) {
+    footer.insertAdjacentHTML('beforebegin', '<section class="stfc-footer-ad" aria-label="Advertisement"><a href="article.html?slug=arena-breakout-infinite-pc-guide" aria-label="Explore Arena Breakout: Infinite on Gamerzeta"><img src="affiliate-assets/arena-breakout-footer-994x102.png" alt="Arena Breakout: Infinite tactical extraction shooter promotion"></a></section>');
+  }
+}
+
 
 if (document.body.dataset.page === 'article') {
   const removeArticleDownBanner = () => document.querySelectorAll('.ad-anchor').forEach(el => el.remove());
